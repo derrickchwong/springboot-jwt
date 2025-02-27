@@ -3,7 +3,7 @@ CREATE TABLE random_city (
   name VARCHAR(255) DEFAULT NULL
 );
 
-CREATE TABLE user (
+CREATE TABLE "user" (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) DEFAULT NULL,
@@ -20,5 +20,5 @@ CREATE TABLE users_roles (
   user_id BIGINT NOT NULL,
   role_id BIGINT NOT NULL,
   CONSTRAINT FK_users_roles_role FOREIGN KEY (role_id) REFERENCES role (id),
-  CONSTRAINT FK_users_roles_user FOREIGN KEY (user_id) REFERENCES user (id)
+  CONSTRAINT FK_users_roles_user FOREIGN KEY (user_id) REFERENCES "user" (id)
 );
